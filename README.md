@@ -62,32 +62,16 @@ or
 ...
 OBSLOG_DLL_LOAD();
 ```
-Each function returns the last error code. 
-It makes sense to have a variable for it.
-```C
-unsigned int err
-```
+
+## Example of use
+
+
 Create log. 
 The extension can be **any** or **none** (*.txt added by default).
 ```C
-OBSLOG log = OBSLOG_Init("some_name.txt");
-err = OBSLOG_GetLastError(log);
-if (err) {
-	printf("Last error description: %s\n", OBSLOG_GetErrorDescription(err));
-}
-```
-Set options (can be combined (opt_1 || opt_2))
-- OBSLOG_FILE_AUTOSAVE - Save file on disk when filling buffer
-- OBSLOG_FILE_REWRITE - Write log to disk with modes (**rewrite** or **new** "000, 001, ...")
-```C
-OBSLOG_SetOptions(log, OBSLOG_FILE_AUTOSAVE);
-```
-Set log buffer size in bytes (min 2048 / max 8388608)
-```C
-OBSLOG_SetLogSize(log, 2000000);
-```
-Example of formatting output
-```C
+
+unsigned int err
+
 int i = -777;
 unsigned int u = 555;
 long long ll = -777777;
@@ -96,7 +80,20 @@ float f = -123.0f;
 double d = -456.789;
 char c = 'Q';
 char s[] = "Hello world!";
-	
+
+OBSLOG log = OBSLOG_Init("some_name.txt");
+err = OBSLOG_GetLastError(log);
+if (err) {
+	printf("Last error description: %s\n", OBSLOG_GetErrorDescription(err));
+}
+
+/* Set options (can be combined (opt_1 | opt_2))
+ - OBSLOG_FILE_AUTOSAVE - Save file on disk when filling buffer
+ - OBSLOG_FILE_REWRITE - Write log to disk with modes (**rewrite** or **new** "000, 001, ...") */
+
+OBSLOG_SetOptions(log, OBSLOG_FILE_AUTOSAVE | OBSLOG_FILE_REWRITE);
+OBSLOG_SetLogSize(log, 65536);
+
 OBSLOG_Printf(log, "\n---------------------------------------\n");
 OBSLOG_Printf(log, "Integer: %i\n", i);
 OBSLOG_Printf(log, "Unsigned: %u\n", u);
@@ -115,7 +112,12 @@ OBSLOG_Printf(log, "Tag 'w': #w\n");
 OBSLOG_Printf(log, "Tag 'e': #e\n");
 OBSLOG_Printf(log, "Tag 'd': #d\n");
 OBSLOG_Printf(log, "Tag 't': #t\n");
+
+OBSLOG_WriteFile(log);
+OBSLOG_Free(log);
+
 ```
+
 Output
 ```
 Integer: -777
@@ -134,15 +136,6 @@ Tag 'w':  WARNING ->
 Tag 'e':  ERROR ---> 
 Tag 'd':  2018-10-20 
 Tag 't':  23:08:00
-```
-Delete log object
-```C
-OBSLOG_Free(log);
-```
-Or
-```C
-err = OBSLOG_Free(log);
-printf("FREE LOG: %s\n", OBSLOG_GetErrorDescription(err));
 ```
 
 ### All OBSIDIAN LOGGER function
