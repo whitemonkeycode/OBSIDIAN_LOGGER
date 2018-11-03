@@ -66,17 +66,17 @@ SOFTWARE.
 /* PUBLIC FUNCTIONS AND DEFINITIONS
 ---------------------------------------------------- */
 
-typedef void*			OBSLOG;
+typedef void* 		OBSLOG;
 
-OBSLOG					OBSLOG_Init(const char* name);
-unsigned int			OBSLOG_SetOptions(OBSLOG log, unsigned int opt);
-unsigned int			OBSLOG_SetLogSize(OBSLOG log, size_t size);
-unsigned int			OBSLOG_Printf(OBSLOG log, const char* fmt, ...);
-unsigned int			OBSLOG_GetLastError(OBSLOG log);
-const char*				OBSLOG_GetErrorDescription(unsigned int error);
-const char*				OBSLOG_GetLogDump(OBSLOG log);
-unsigned int			OBSLOG_Clear(OBSLOG log);
-unsigned int			OBSLOG_WriteFile(OBSLOG log);
-unsigned int			OBSLOG_Free(OBSLOG log);
+OBSLOG 				OBSLOG_Init(const char* name);
+unsigned int        OBSLOG_SetOptions(OBSLOG log, unsigned int opt);
+unsigned int        OBSLOG_SetLogSize(OBSLOG log, size_t size);
+unsigned int        OBSLOG_Printf(OBSLOG log, const char* fmt, ...);
+unsigned int        OBSLOG_GetLastError(OBSLOG log);
+const char*         OBSLOG_GetErrorDescription(unsigned int error);
+const char*         OBSLOG_GetLogDump(OBSLOG log);
+unsigned int        OBSLOG_Clear(OBSLOG log);
+unsigned int        OBSLOG_WriteFile(OBSLOG log);
+unsigned int        OBSLOG_Free(OBSLOG log);
 
 #endif /* !__OBSIDIAN_TOOL_LOGGER__ */
