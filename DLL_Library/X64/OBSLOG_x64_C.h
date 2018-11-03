@@ -51,8 +51,6 @@ Some limitations and conventions are:
 
 FORMATTING CHARACTERS
 
-|	Char	|	Description						|	Output
-|-----------|-----------------------------------|----------
 	%i			Signed integer                    -123
 	%u			Unsigned integer                  456
 	%I			Signed long long                  -123456
