@@ -44,22 +44,22 @@ SOFTWARE.
 /* DESCRIPTION OF FORMATTING CHARACTERS
 ----------------------------------------------------
 
-%i		Signed integer						-392
-%u		Unsigned integer					7235
-%I		Signed long long					-392
-%U		Unsigned long long					7235
-%f		Floating point						392.65
-%x		Unsigned hex integer (lowercase)	7fa
-%X		Unsigned hex integer (uppercase)	7FA
-%c		Character							'a'
-%s		String of characters				"sample"
+%i 	Signed integer 			-392
+%u 	Unsigned integer 			7235
+%I 	Signed long long 			-392
+%U 	Unsigned long long 			7235
+%f 	Floating point 			392.65
+%x 	Unsigned hex integer (lowercase) 			7fa
+%X 	Unsigned hex integer (uppercase) 			7FA
+%c 	Character 			'a'
+%s 	String of characters 			"sample"
 
-#n		TAG "NOTICE"						NOTICE -->
-#i		TAG "INFO"							INFO ---->
-#w		TAG "WARNING"						WARNING ->
-#e		TAG "ERROR"							ERROR --->
-#d		TAG "DATE" Y-M-D					2018-08-17
-#t		TAG "TIME" H:M:S					21:55:35
+#n 	TAG "NOTICE" 			NOTICE -->
+#i 	TAG "INFO" 			INFO ---->
+#w 	TAG "WARNING" 			WARNING ->
+#e 	TAG "ERROR" 			ERROR --->
+#d 	TAG "DATE" Y-M-D 			2018-08-17
+#t 	TAG "TIME" H:M:S 			21:55:35
 
 */
 
