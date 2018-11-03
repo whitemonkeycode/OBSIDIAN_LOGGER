@@ -85,10 +85,6 @@ char c = 'Q';
 char s[] = "Hello world!";
 
 OBSLOG log = OBSLOG_Init("some_name.txt");
-err = OBSLOG_GetLastError(log);
-if (err) {
-	printf("Last error description: %s\n", OBSLOG_GetErrorDescription(err));
-}
 
 /* Set options (can be combined (opt_1 | opt_2))
  - OBSLOG_FILE_AUTOSAVE - Save file on disk when filling buffer
@@ -117,6 +113,10 @@ OBSLOG_Printf(log, "Tag 'd': #d\n");
 OBSLOG_Printf(log, "Tag 't': #t\n");
 
 OBSLOG_WriteFile(log);
+
+err = OBSLOG_GetLastError(log);
+if (err) printf("Last error description: %s\n", OBSLOG_GetErrorDescription(err));
+
 OBSLOG_Free(log);
 
 ```
