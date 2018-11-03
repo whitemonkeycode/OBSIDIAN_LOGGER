@@ -11,6 +11,7 @@
   - Customizable buffer size
   - Write log to disk with modes (rewrite / new "000, 001, ...")
   - Autosave option when filling buffer
+  - Forced file write
   - If the file extension is not specified, the default is "* .txt"
 
 ### Some limitations and conventions are:
