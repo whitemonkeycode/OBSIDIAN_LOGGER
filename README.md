@@ -61,10 +61,9 @@ if (err) {
 	printf("Last error description: %s\n", OBSLOG_GetErrorDescription(err));
 }
 ```
-Set options
-  * OBSLOG_FILE_AUTOSAVE - Save file on disk when filling buffer
-  * OBSLOG_FILE_REWRITE - Write log to disk with modes (**rewrite** or **new** "000, 001, ...")
-Options can be combined (opt_1 || opt_2)
+Set options (can be combined (opt_1 || opt_2))
+- OBSLOG_FILE_AUTOSAVE - Save file on disk when filling buffer
+- OBSLOG_FILE_REWRITE - Write log to disk with modes (**rewrite** or **new** "000, 001, ...")
 ```C
 OBSLOG_SetOptions(log, OBSLOG_FILE_AUTOSAVE);
 ```
