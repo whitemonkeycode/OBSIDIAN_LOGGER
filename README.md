@@ -2,6 +2,7 @@
 
 ### Simple and easy library in C language "LOGGER" from the utility set "OBSIDIAN TOOLS". Designed for easy messaging when debugging an application.
 
+
 ### Key features:
 
   - Formatted output is simplified (specification differs from "printf ...")
@@ -22,6 +23,7 @@
  - The log name is the path to save the file
  - The maximum length of the name is limited to 248 characters including the file extension
  
+ 
 ### Formatting characters
 
 Char | Description | Output
@@ -41,6 +43,7 @@ Char | Description | Output
 #i | TAG "INFO" | INFO ---->
 #w | TAG "WARNING" | WARNING ->
 #e | TAG "ERROR" | ERROR --->
+
 
 ## Beginning of work
 
