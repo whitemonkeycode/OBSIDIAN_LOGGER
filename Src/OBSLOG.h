@@ -38,8 +38,8 @@ SOFTWARE.
 /* OPTIONS
 ---------------------------------------------------- */
 
-#define OBSLOG_FILE_AUTOSAVE	1 /* 0b00000001 */
-#define OBSLOG_FILE_REWRITE		2 /* 0b00000010 */
+#define OBSLOG_FILE_AUTOSAVE      1 /* 0b00000001 */
+#define OBSLOG_FILE_REWRITE       2 /* 0b00000010 */
 
 /* DESCRIPTION OF FORMATTING CHARACTERS
 ----------------------------------------------------
