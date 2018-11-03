@@ -44,10 +44,21 @@ Char | Description | Output
 
 ### Example of use
 
+
 First step.
+
+### If use source code:
 ```C
 #include "OBSLOG.h"
 ```
+### If use DDL
+```C
+#include "OBSLOG_x32.h"
+or
+#include "OBSLOG_x64.h"
+```
+
+
 Each function returns the last error code. 
 It makes sense to have a variable for it.
 ```C
