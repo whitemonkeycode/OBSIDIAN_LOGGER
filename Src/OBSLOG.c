@@ -28,9 +28,9 @@
 #define ___OBSLOG_TAG_MAX_VAL		4
 
 #define ___OBSLOG_TAG_NOTICE		0
-#define ___OBSLOG_TAG_INFO			1
+#define ___OBSLOG_TAG_INFO		1
 #define ___OBSLOG_TAG_WARNING		2
-#define ___OBSLOG_TAG_ERROR			3
+#define ___OBSLOG_TAG_ERROR		3
 
 #define ___OBSLOG_ERR_MAX_VAL		9
 
@@ -64,13 +64,13 @@ const char* OBSLOG_tag[___OBSLOG_TAG_MAX_VAL] = {
 };
 
 typedef struct {
-	char*			name;
-	char*			data;
-	size_t			data_Size;
+	char*		name;
+	char*		data;
+	size_t		data_Size;
 	unsigned int	error_Id;
 	unsigned int	options;
 	unsigned int	needSave_Flag;
-	size_t			curPos;
+	size_t		curPos;
 	unsigned int	fileNumCounter;
 } OBSLOG_STORAGE;
 
@@ -266,23 +266,23 @@ unsigned int OBSLOG_Printf(OBSLOG log, const char* fmt, ...) {
 
 	OBSLOG_STORAGE*		tempLog;
 
-	char				tempNumBuffer[64];
-	size_t				strLength;
-	time_t				timer;
-	char				timeStamp[64];
-	struct tm*			tm_info;
-	size_t				last_CurPos;
+	char			tempNumBuffer[64];
+	size_t			strLength;
+	time_t			timer;
+	char			timeStamp[64];
+	struct tm*		tm_info;
+	size_t			last_CurPos;
 
-	va_list				argList;
+	va_list			argList;
 
-	int					SIGNED_INT;
+	int			SIGNED_INT;
 	unsigned int		UNSIGNED_INT;
-	long long			SIGNED_LL;
+	long long		SIGNED_LL;
 	unsigned long long	UNSIGNED_LL;
-	size_t				USIZET;
-	double				DOUBLEFP;
-	char				SYMBOL;
-	char*				STRING_PTR;
+	size_t			USIZET;
+	double			DOUBLEFP;
+	char			SYMBOL;
+	char*			STRING_PTR;
 
 	if (!log) return OBSLOG_ERRID_LOG_FAIL;
 	else tempLog = (OBSLOG_STORAGE*)log;
