@@ -52,14 +52,14 @@ SOFTWARE.
 %x 	Unsigned hex integer (lowercase) 			7fa
 %X 	Unsigned hex integer (uppercase) 			7FA
 %c 	Character 			'a'
-%s 	String of characters 			"sample"
+%s 	String of characters   "sample"
 
-#n 	TAG "NOTICE" 			NOTICE -->
-#i 	TAG "INFO" 			INFO ---->
-#w 	TAG "WARNING" 			WARNING ->
-#e 	TAG "ERROR" 			ERROR --->
-#d 	TAG "DATE" Y-M-D 			2018-08-17
-#t 	TAG "TIME" H:M:S 			21:55:35
+#n 	TAG "NOTICE"   NOTICE -->
+#i 	TAG "INFO"   INFO ---->
+#w 	TAG "WARNING"   WARNING ->
+#e 	TAG "ERROR"   ERROR --->
+#d 	TAG "DATE" Y-M-D   2018-08-17
+#t 	TAG "TIME" H:M:S   21:55:35
 
 */
 
@@ -68,7 +68,7 @@ SOFTWARE.
 
 typedef void* 		OBSLOG;
 
-OBSLOG 				OBSLOG_Init(const char* name);
+OBSLOG              OBSLOG_Init(const char* name);
 unsigned int        OBSLOG_SetOptions(OBSLOG log, unsigned int opt);
 unsigned int        OBSLOG_SetLogSize(OBSLOG log, size_t size);
 unsigned int        OBSLOG_Printf(OBSLOG log, const char* fmt, ...);
