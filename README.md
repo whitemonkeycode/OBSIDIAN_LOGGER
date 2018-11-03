@@ -42,23 +42,26 @@ Char | Description | Output
 #w | TAG "WARNING" | WARNING ->
 #e | TAG "ERROR" | ERROR --->
 
-### Example of use
+## Beginning of work
 
-
-First step.
-
-### If use source code:
+### If you want to use the **source code**:
 ```C
 #include "OBSLOG.h"
 ```
-### If use DDL
+### If you want to use the **DLL**:
+The OBSLOG_DLL_LOAD function returns an integer. (0 - Success) or (another number - Error).
+
 ```C
 #include "OBSLOG_x32.h"
-or
-#include "OBSLOG_x64.h"
+...
+OBSLOG_DLL_LOAD();
 ```
-
-
+or
+```C
+#include "OBSLOG_x64.h"
+...
+OBSLOG_DLL_LOAD();
+```
 Each function returns the last error code. 
 It makes sense to have a variable for it.
 ```C
