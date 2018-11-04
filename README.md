@@ -82,53 +82,64 @@ OBSLOG_DLL_FREE();
 
 ## Example of use
 
-
-Create log. 
-The extension can be **any** or **none** (*.txt added by default).
 ```C
-unsigned int err
+#include <stdio.h>
+#include <string.h>
 
-int i = -777;
-unsigned int u = 555;
-long long ll = -777777;
-unsigned long long ull = 555555;
-float f = -123.0f;
-double d = -456.789;
-char c = 'Q';
-char s[] = "Hello world!";
+#include "OBSLOG.h"
 
-OBSLOG log = OBSLOG_Init("some_name.txt");
+int main(void) {
 
-/* Set options (can be combined (opt_1 | opt_2))
- - OBSLOG_FILE_AUTOSAVE - Save file on disk when filling buffer
- - OBSLOG_FILE_REWRITE - Write log to disk with modes (**rewrite** or **new** "000, 001, ...") */
+	int i = -777;
+	unsigned int u = 555;
+	long long ll = -777777;
+	unsigned long long ull = 555555;
+	float f = -123.0f;
+	double d = -456.789;
+	char c = 'Q';
+	char s[] = "Hello world!";
 
-OBSLOG_SetOptions(log, OBSLOG_FILE_AUTOSAVE | OBSLOG_FILE_REWRITE);
-OBSLOG_SetLogSize(log, 65536);
+	unsigned int err;
+	OBSLOG log = OBSLOG_Init("some_name"); /* The extension can be **any** or **none** (*.txt added by default) */
 
-OBSLOG_Printf(log, "\n---------------------------------------\n");
-OBSLOG_Printf(log, "Integer: %i\n", i);
-OBSLOG_Printf(log, "Unsigned: %u\n", u);
-OBSLOG_Printf(log, "Long long: %I\n", ll);
-OBSLOG_Printf(log, "Unsigned long long: %U\n", ull);
-OBSLOG_Printf(log, "Hex lower case: %x\n", i);
-OBSLOG_Printf(log, "Hex upper case: %X\n", i);
-OBSLOG_Printf(log, "Floating point: %f\n", f);
-OBSLOG_Printf(log, "Double: %f\n", d);
-OBSLOG_Printf(log, "Char: %c\n", c);
-OBSLOG_Printf(log, "String: %s\n", s);
+	err = OBSLOG_GetLastError(log);
+	if (err) printf("LOG INIT: %s\n", OBSLOG_GetErrorDescription(err));
 
-OBSLOG_Printf(log, "Tag 'n': #n\n");
-OBSLOG_Printf(log, "Tag 'i': #i\n");
-OBSLOG_Printf(log, "Tag 'w': #w\n");
-OBSLOG_Printf(log, "Tag 'e': #e\n");
-OBSLOG_Printf(log, "Tag 'd': #d\n");
-OBSLOG_Printf(log, "Tag 't': #t\n");
+	/* Set options (can be combined (opt_1 | opt_2))
+	- OBSLOG_FILE_AUTOSAVE - Save file on disk when filling buffer
+	- OBSLOG_FILE_REWRITE - Write log to disk with modes (**rewrite** or **new** "000, 001, ...") */
 
-OBSLOG_WriteFile(log);
+	OBSLOG_SetOptions(log, OBSLOG_FILE_AUTOSAVE | OBSLOG_FILE_REWRITE);
+	OBSLOG_SetLogSize(log, 65536);
 
-err = OBSLOG_GetLastError(log);
-if (err) printf("Last error description: %s\n", OBSLOG_GetErrorDescription(err));
+	OBSLOG_Printf(log, "\n---------------------------------------\n");
+	OBSLOG_Printf(log, "TEST ITERATION %u\n\n", testCounter);
+	OBSLOG_Printf(log, "Integer: %i\n", i);
+	OBSLOG_Printf(log, "Unsigned: %u\n", u);
+	OBSLOG_Printf(log, "Long long: %I\n", ll);
+	OBSLOG_Printf(log, "Unsigned long long: %U\n", ull);
+	OBSLOG_Printf(log, "Hex lower case: %x\n", i);
+	OBSLOG_Printf(log, "Hex upper case: %X\n", i);
+	OBSLOG_Printf(log, "Floating point: %f\n", f);
+	OBSLOG_Printf(log, "Double: %f\n", d);
+	OBSLOG_Printf(log, "Char: %c\n", c);
+	OBSLOG_Printf(log, "String: %s\n", s);
+
+	OBSLOG_Printf(log, "Tag 'n': #n\n");
+	OBSLOG_Printf(log, "Tag 'i': #i\n");
+	OBSLOG_Printf(log, "Tag 'w': #w\n");
+	OBSLOG_Printf(log, "Tag 'e': #e\n");
+	OBSLOG_Printf(log, "Tag 'd': #d\n");
+	OBSLOG_Printf(log, "Tag 't': #t\n");
+
+	OBSLOG_WriteFile(log);
+
+	err = OBSLOG_Free(log);
+	if (err) printf("FREE LOG: %s\n", OBSLOG_GetErrorDescription(err));
+
+	getchar();
+	return 0;
+}
 ```
 
 Output
@@ -154,16 +165,16 @@ Tag 't':  23:08:00
 ### All OBSIDIAN LOGGER function
 
 ```C
-OBSLOG				OBSLOG_Init(const char* name);
-unsigned int			OBSLOG_SetOptions(OBSLOG log, unsigned int opt);
-unsigned int			OBSLOG_SetLogSize(OBSLOG log, size_t size);
-unsigned int			OBSLOG_Printf(OBSLOG log, const char* fmt, ...);
-unsigned int			OBSLOG_GetLastError(OBSLOG log);
-const char*			OBSLOG_GetErrorDescription(unsigned int error);
-const char*			OBSLOG_GetLogDump(OBSLOG log);
-unsigned int			OBSLOG_Clear(OBSLOG log);
-unsigned int			OBSLOG_WriteFile(OBSLOG log);
-unsigned int			OBSLOG_Free(OBSLOG log);
+OBSLOG          OBSLOG_Init(const char* name);
+unsigned int    OBSLOG_SetOptions(OBSLOG log, unsigned int opt);
+unsigned int    OBSLOG_SetLogSize(OBSLOG log, size_t size);
+unsigned int    OBSLOG_Printf(OBSLOG log, const char* fmt, ...);
+unsigned int    OBSLOG_GetLastError(OBSLOG log);
+const char*     OBSLOG_GetErrorDescription(unsigned int error);
+const char*     OBSLOG_GetLogDump(OBSLOG log);
+unsigned int    OBSLOG_Clear(OBSLOG log);
+unsigned int    OBSLOG_WriteFile(OBSLOG log);
+unsigned int    OBSLOG_Free(OBSLOG log);
 ```
 
 ### License
