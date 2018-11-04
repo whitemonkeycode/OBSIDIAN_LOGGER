@@ -45,7 +45,7 @@ Char | Description | Output
 #e | TAG "ERROR" | ERROR --->
 
 
-### If you want to use the **DLL**:
+## If you want to use the **DLL**:
 ```C
 /* Example for 32bit*/
 #include "OBSLOG_x32.h"
@@ -126,6 +126,7 @@ int main(void) {
 ```
 
 Output
+```
 Integer: -777
 Unsigned: 555
 Long long: -777777
@@ -142,9 +143,10 @@ Tag 'w':  WARNING ->
 Tag 'e':  ERROR ---> 
 Tag 'd':  2018-10-20 
 Tag 't':  23:08:00
+```
 
-### All OBSIDIAN LOGGER function
-
+## All OBSIDIAN LOGGER function
+```
 OBSLOG          OBSLOG_Init(const char* name);
 unsigned int    OBSLOG_SetOptions(OBSLOG log, unsigned int opt);
 unsigned int    OBSLOG_SetLogSize(OBSLOG log, size_t size);
@@ -155,6 +157,7 @@ const char*     OBSLOG_GetLogDump(OBSLOG log);
 unsigned int    OBSLOG_Clear(OBSLOG log);
 unsigned int    OBSLOG_WriteFile(OBSLOG log);
 unsigned int    OBSLOG_Free(OBSLOG log);
+```
 
 ## License
 
