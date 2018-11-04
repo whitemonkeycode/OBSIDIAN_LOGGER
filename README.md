@@ -56,14 +56,28 @@ The OBSLOG_DLL_LOAD function returns an integer. (0 - Success) or (another numbe
 
 ```C
 #include "OBSLOG_x32.h"
-...
+
 OBSLOG_DLL_LOAD();
+
+/* Some code  */
+/* Some code  */
+/* Some code  */
+
+OBSLOG_Free(log);
+OBSLOG_DLL_FREE();
 ```
 or
 ```C
 #include "OBSLOG_x64.h"
-...
+
 OBSLOG_DLL_LOAD();
+
+/* Some code  */
+/* Some code  */
+/* Some code  */
+
+OBSLOG_Free(log);
+OBSLOG_DLL_FREE();
 ```
 
 ## Example of use
@@ -72,7 +86,6 @@ OBSLOG_DLL_LOAD();
 Create log. 
 The extension can be **any** or **none** (*.txt added by default).
 ```C
-
 unsigned int err
 
 int i = -777;
@@ -116,9 +129,6 @@ OBSLOG_WriteFile(log);
 
 err = OBSLOG_GetLastError(log);
 if (err) printf("Last error description: %s\n", OBSLOG_GetErrorDescription(err));
-
-OBSLOG_Free(log);
-
 ```
 
 Output
