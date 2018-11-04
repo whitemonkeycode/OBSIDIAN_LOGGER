@@ -45,8 +45,6 @@ Char | Description | Output
 #e | TAG "ERROR" | ERROR --->
 
 
-## Beginning of work
-
 ### If you want to use the **DLL**:
 ```C
 /* Example for 32bit*/
@@ -83,7 +81,9 @@ int main(void) {
 	char s[] = "Hello world!";
 
 	unsigned int err;
-	OBSLOG log = OBSLOG_Init("some_name"); /* The extension can be **any** or **none** (*.txt added by default) */
+	
+	/* The extension can be **any** or **none** (*.txt added by default) */
+	OBSLOG log = OBSLOG_Init("some_name");
 
 	err = OBSLOG_GetLastError(log);
 	if (err) printf("LOG INIT: %s\n", OBSLOG_GetErrorDescription(err));
@@ -126,7 +126,6 @@ int main(void) {
 ```
 
 Output
-```
 Integer: -777
 Unsigned: 555
 Long long: -777777
@@ -143,7 +142,6 @@ Tag 'w':  WARNING ->
 Tag 'e':  ERROR ---> 
 Tag 'd':  2018-10-20 
 Tag 't':  23:08:00
-```
 
 ### All OBSIDIAN LOGGER function
 
