@@ -56,11 +56,11 @@ Char | Description | Output
 /* (0 - Success) or (another number - Error) */   
 OBSLOG_DLL_LOAD();
 
+/* Create log */
 /* Some code  */
 /* Some code  */
-/* Some code  */
+/* Delete log */
 
-OBSLOG_Free(log);
 OBSLOG_DLL_FREE();
 ```
 ## Example of use
