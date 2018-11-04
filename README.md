@@ -47,16 +47,13 @@ Char | Description | Output
 
 ## Beginning of work
 
-### If you want to use the **source code**:
-```C
-#include "OBSLOG.h"
-```
 ### If you want to use the **DLL**:
-The OBSLOG_DLL_LOAD function returns an integer. (0 - Success) or (another number - Error).
-
 ```C
+/* Example for 32bit*/
 #include "OBSLOG_x32.h"
 
+/* The OBSLOG_DLL_LOAD function returns an integer */
+/* (0 - Success) or (another number - Error) */   
 OBSLOG_DLL_LOAD();
 
 /* Some code  */
@@ -66,20 +63,6 @@ OBSLOG_DLL_LOAD();
 OBSLOG_Free(log);
 OBSLOG_DLL_FREE();
 ```
-or
-```C
-#include "OBSLOG_x64.h"
-
-OBSLOG_DLL_LOAD();
-
-/* Some code  */
-/* Some code  */
-/* Some code  */
-
-OBSLOG_Free(log);
-OBSLOG_DLL_FREE();
-```
-
 ## Example of use
 
 ```C
