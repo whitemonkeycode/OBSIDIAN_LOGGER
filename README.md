@@ -1,3 +1,5 @@
+![OBSIDIAN Tools Logo](https://raw.githubusercontent.com/whitemonkeystuff/OBSIDIAN_LOGGER/master/OBS%20Logo.jpg)
+
 # OBSIDIAN_LOGGER
 
 ### Simple and easy library in C language "LOGGER" from the utility set "OBSIDIAN TOOLS". Designed for easy messaging when debugging an application.
