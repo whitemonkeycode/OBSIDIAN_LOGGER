@@ -1,4 +1,4 @@
-/* LICENCE
+/* LICENSE
 ----------------------------------------------------
 This software product is distributed under the license MIT
 Copyright (c) 2018 Mogulev Alexey forawhitemonkey@gmail.com
